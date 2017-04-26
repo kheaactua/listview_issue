@@ -56,6 +56,9 @@ class Blobs : public QQuickItem
     */
    void cleanBlobs();
 
+   /** Create a blob with random data */
+   void autoCreateBlob();
+
    protected:
 
     /** Map of blobs indexed by blob uuid */
@@ -64,6 +67,10 @@ class Blobs : public QQuickItem
     /** Timer to regualrly trigger the blob cleanup */
     QTimer* cleanup_timer_;
 
+    /** Timer to create blobs */
+    QTimer* create_timer_;
+
+    /** The time a blob may exist in the model */
     unsigned int blob_life_time_ = 5000;
 };
 

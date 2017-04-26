@@ -121,6 +121,7 @@ auto BlobModel::removeRows(int row, int count, const QModelIndex& parent) -> boo
     while (count > 0)
     {
         auto b = blobs_.takeAt(row);
+        qDebug() << "Deleting " << b->uuid();
         delete b;
         count--;
     }
